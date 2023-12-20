@@ -10,5 +10,5 @@ import org.junit.runner.RunWith;
         glue = "StepDefinitions"
 )
 
-public class SignInStepsRunner {
+public class SignInStepRunner {
 }

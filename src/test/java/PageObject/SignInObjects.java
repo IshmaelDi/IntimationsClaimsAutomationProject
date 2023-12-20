@@ -37,16 +37,30 @@ public class SignInObjects  {
 
     @Step("Login in using valid Credentials")
 
-    public void PopUpLogin(String Username, String Password) {
+    public void PopUpLogin(String Username) {
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
 
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(UserName))).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(UserName))).sendKeys(Username);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NextButtonXpath))).click();
+    }
 
+
+    @Step("User click Next Button")
+    public void NextButton() {
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(NextButtonXpath))).click();
+    }
+
+    @Step("Enter Password")
+    public void EnterPassword(String Password) {
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Password1))).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Password1))).sendKeys(Password);
+    }
+    @Step("Click SignIn Button")
+    public void SignInButton(){
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SignIn))).click();
     }
 

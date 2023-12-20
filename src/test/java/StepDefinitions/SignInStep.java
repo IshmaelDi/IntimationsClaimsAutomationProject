@@ -1,15 +1,13 @@
-package stepDefinitions;
+package StepDefinitions;
 
 import PageObject.SignInObjects;
 
 import net.serenitybdd.annotations.Steps;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import net.serenitybdd.annotations.Steps;
 import net.serenitybdd.core.pages.PageObject;
 
-public class SignInSteps extends PageObject {
+public class SignInStep extends PageObject {
 
     @Steps
     SignInObjects signInObjects;
@@ -21,13 +19,13 @@ public class SignInSteps extends PageObject {
     }
     @When("User enters valid credentials {string}, and click Next Button and enter {string} and clicks sign in button.")
     public void user_enters_valid_credentials_and_click_next_button_and_enter_and_clicks_sign_in_button(String Username, String Password) {
-        signInObjects.PopUpLogin(Username, Password);
+        signInObjects.PopUpLogin(Username);
+        signInObjects.NextButton();
+        signInObjects.EnterPassword(Password);
+        signInObjects.SignInButton();
 
     }
-    @Then("User Navigate to Information Board.")
-    public void user_navigate_to_information_board() {
 
-    }
 
 
 
