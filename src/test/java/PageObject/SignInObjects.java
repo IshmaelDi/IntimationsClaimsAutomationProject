@@ -19,9 +19,9 @@ public class SignInObjects  {
 
     // Sign In Credentials
     String UserName = "(//input[@id='i0116'])[1]";
-    String NextButtonXpath = "(//input[@id='idSIButton9'])[1]";
+    String NextButtonXpath = "//input[@id='idSIButton9']";
     String Password1 = "(//input[@id='i0118'])[1]";
-    String SignIn = "(//input[@id='idSIButton9']";
+    String SignIn = "//input[@id='idSIButton9']";
 
 
     // Logic Implementations
